@@ -12,7 +12,9 @@ facebook: www.facebook.com/mjonyh
 
 1. How to run?
 -------------------------
-	- In terminal write: python schroedinger.py
+	$ python schroedinger.py
+    or
+    $ python2 schroedinger.py
 	
 2. Used method:
 -------------------------
