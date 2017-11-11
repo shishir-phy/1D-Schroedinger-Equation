@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-from numpy import cosh
-
 import matplotlib.pyplot as plt
 
 from classes.class_secant import Secant_Method
@@ -13,7 +11,9 @@ from classes.class_simpson import Simpson_Method
 Potential function of the quantum system.
 ---------------------------------------------------------
 '''
-'''
+
+
+from numpy import cosh
 def v(x):
 	'This is the function where analytical form is given'
 	h_bar = 1.0
@@ -32,7 +32,7 @@ def v(x):
 		return 0
 	else:
 		return x*x - 4
-
+'''
 
 '''
 Help function to discretization of the analytical form
