@@ -2,9 +2,9 @@ from numpy import cosh
 
 import matplotlib.pyplot as plt
 
-from class_secant import Secant_Method
-from class_numerov import Numerov_Method
-from class_simpson import Simpson_Method
+from classes.class_secant import Secant_Method
+from classes.class_numerov import Numerov_Method
+from classes.class_simpson import Simpson_Method
 
 
 '''
@@ -18,7 +18,7 @@ def v(x):
 	m = 1.0
 	alpha = 1.0
 	lamb = 4.0
-	
+
 	frst = (h_bar/(2*m))*alpha*alpha * lamb*(lamb - 1)
 	scnd = 0.5 - 1/(cosh(alpha*x)*cosh(alpha*x))
 
@@ -41,17 +41,17 @@ def anal_disc():
 	'Discretization of the analytical form will be done'
 	initial = -10
 	h = 0.01
-	
+
 	x = []
 	y = []
-	
+
 	while initial <= 10:
 		x.append(initial)
-		y.append(v(initial)) 
+		y.append(v(initial))
 		initial += h
-	
+
 	return x, y
-	
+
 '''
 Function used to normalized the wavefunction.
 ---------------------------------------------------------
@@ -59,12 +59,12 @@ Function used to normalized the wavefunction.
 
 def normalized(u):
 	'Normalization to the wavefunction'
-	
+
 	result = integration.simpson(u)
-	
+
 	for i in range(len(u)):
 		u[i] = u[i] / result
-	
+
 	return u
 
 '''
@@ -77,7 +77,7 @@ def eigen(x, l):
 	y = []
 	for i in range(len(x)):
 		y.append(l)
-	
+
 	return y
 
 '''
@@ -121,7 +121,7 @@ title = 'Eigenvalue(s) = '
 while l < max(v):
 	'Searching for the eigenvalue.'
 	l = find.secant(l)
-	
+
 	title = title + str("%.2f" % round(l,2)) + ', '
 
 	'Calculating the eigenfunction.'
@@ -129,13 +129,13 @@ while l < max(v):
 
 	'Normalizing the eigenfunction'
 	u = normalized(u)
-	
+
 	'list to plot eigenvalue'
 	el = eigen(x, l)
-	
+
 	'Adding eigenvalue and normalized wavefunction'
 	n_u = mixfunction(u, el)
-	
+
 	plt.plot(x, n_u, 'g')
 	plt.plot(x, el, 'r')
 
