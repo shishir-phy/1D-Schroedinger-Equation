@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from numpy import cosh
 
 import matplotlib.pyplot as plt
