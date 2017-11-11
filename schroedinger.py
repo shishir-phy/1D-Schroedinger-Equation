@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import matplotlib.pyplot as plt
 
 from classes.class_secant import Secant_Method
@@ -11,7 +10,6 @@ from classes.class_simpson import Simpson_Method
 Potential function of the quantum system.
 ---------------------------------------------------------
 '''
-
 
 from numpy import cosh
 def v(x):
