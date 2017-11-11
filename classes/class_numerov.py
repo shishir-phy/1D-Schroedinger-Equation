@@ -3,7 +3,7 @@ class Numerov_Method(object):
 	def __init__(self, x, v):
 		self.v = v
 		self.x = x
-		print '''
+		'''
 		---------------------------------
 		   Numerov algorithm is initialized
 		---------------------------------
@@ -11,13 +11,13 @@ class Numerov_Method(object):
 
 	def q(self, energy, i):
 		return 2 * (energy - self.v[i])
-	
+
 	def s(self, i):
 		return 0
 
 	def numerov(self, l):
 		#print 'Using Numerov Algorithm, calculating wavefunction for: ', l
-		
+
 		h = 0.01
 		u = [0, h]
 		g = h*h/12.0
