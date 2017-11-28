@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import matplotlib.pyplot as plt
+import math
 
 from classes.class_secant import Secant_Method
 from classes.class_numerov import Numerov_Method
@@ -18,11 +19,13 @@ def v(x):
 	m = 1.0
 	alpha = 1.0
 	lamb = 4.0
+    
 
 	frst = (h_bar/(2*m))*alpha*alpha * lamb*(lamb - 1)
 	scnd = 0.5 - 1/(cosh(alpha*x)*cosh(alpha*x))
 
-	return frst * scnd
+	return frst*scnd
+        
 '''
 def v(x):
 	'Square Well Potential'
@@ -30,8 +33,8 @@ def v(x):
 		return 0
 	else:
 		return x*x - 4
-'''
 
+'''
 '''
 Help function to discretization of the analytical form
 ---------------------------------------------------------
